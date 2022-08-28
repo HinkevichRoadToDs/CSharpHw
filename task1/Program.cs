@@ -1,21 +1,17 @@
-﻿Console.WriteLine("Введите первое число ");
-int number1 = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите второе число ");
-int number2 = Convert.ToInt32(Console.ReadLine());
-int max = number1;
-if (number1 == number2) 
+﻿Console.Write("Введите число: ");
+string number = Console.ReadLine();
+
+
+if( number.Length != 5)
 {
-Console.WriteLine("Числа равны");
+    Console.WriteLine("Нужно ввести пятизначное число");
+}
+else if (number[0] == number[4] && number[1]== number[3])
+{
+    Console.WriteLine("Это палиндром");
 }
 else
 {
-    if (number1 > number2)
-    {
-        Console.WriteLine("max = " + max);
-    }
-    else
-    {
-        max=number2;
-        Console.WriteLine("max = " + max);
-    }
+    Console.WriteLine("Это не палиндром");
 }
+

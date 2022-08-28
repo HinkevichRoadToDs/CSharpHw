@@ -1,13 +1,13 @@
-﻿Console.WriteLine("Введите первое число ");
-int number1 = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите второе число ");
-int number2 = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите третье число ");
-int number3 = Convert.ToInt32(Console.ReadLine());
+﻿Console.WriteLine("Введите координаты точки А(x,y,z): ");
+double xa = Convert.ToDouble(Console.ReadLine());
+double ya = Convert.ToDouble(Console.ReadLine());
+double za = Convert.ToDouble(Console.ReadLine());
 
-int max = number1;
+Console.WriteLine("Введите координаты точки B(x,y,z): ");
+double xb = Convert.ToDouble(Console.ReadLine());
+double yb = Convert.ToDouble(Console.ReadLine());
+double zb = Convert.ToDouble(Console.ReadLine());
 
-if (max < number2) max = number2;
-if (max < number3) max = number3;
+double distance = Math.Sqrt( Math.Pow(xb-xa,2) + Math.Pow(yb-ya,2) + Math.Pow(zb-za,2) );
 
-Console.WriteLine(max);
+Console.WriteLine($"Расстояние равно {distance}");
