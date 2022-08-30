@@ -1,8 +1,16 @@
-﻿Console.WriteLine("Введите N: ");
-int number = Convert.ToInt32(Console.ReadLine());
+﻿Console.Write("Введите размер массива, который вы хотите получить: ");
+int ArraySize = Convert.ToInt32(Console.ReadLine());
+int[] array = new int[ArraySize];
 
+GenerateAndPrintArray(array,ArraySize);
 
-for (int count = 1; count <= number; count++)
+void GenerateAndPrintArray(int[]arr,int size)
 {
-    Console.Write(Math.Pow(count,3) + " ");
+    
+    for  (int i = 0; i < size; i++) 
+    {
+        arr[i] = new Random().Next(0,2147483647);
+        Console.Write(arr[i] + " ");
+    }
+      
 }

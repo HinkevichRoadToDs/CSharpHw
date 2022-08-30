@@ -1,13 +1,15 @@
-﻿Console.WriteLine("Введите координаты точки А(x,y,z): ");
-double xa = Convert.ToDouble(Console.ReadLine());
-double ya = Convert.ToDouble(Console.ReadLine());
-double za = Convert.ToDouble(Console.ReadLine());
+﻿Console.Write("Введите  число: ");
+int number = Convert.ToInt32(Console.ReadLine());
+string StringNumber = Convert.ToString(number);
 
-Console.WriteLine("Введите координаты точки B(x,y,z): ");
-double xb = Convert.ToDouble(Console.ReadLine());
-double yb = Convert.ToDouble(Console.ReadLine());
-double zb = Convert.ToDouble(Console.ReadLine());
-
-double distance = Math.Sqrt( Math.Pow(xb-xa,2) + Math.Pow(yb-ya,2) + Math.Pow(zb-za,2) );
-
-Console.WriteLine($"Расстояние равно {distance}");
+int SumOfDigits(string num)
+{
+    int size = num.Length;
+    int sum = num[0]- '0'; // конвертация char в int xD
+    for (int i = 1; i < size; i++) 
+    {
+        sum += (num[i]-'0');
+    }
+    return sum;
+}
+Console.WriteLine($"Cумма цифр в числе = {SumOfDigits(StringNumber)}");
