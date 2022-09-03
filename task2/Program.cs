@@ -1,13 +1,26 @@
-﻿Console.WriteLine("Введите первое число ");
-int number1 = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите второе число ");
-int number2 = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите третье число ");
-int number3 = Convert.ToInt32(Console.ReadLine());
+﻿Console.Write("Введите размер массива: ");
+int size = Convert.ToInt32(Console.ReadLine());
 
-int max = number1;
+int[] array = new int[size];
 
-if (max < number2) max = number2;
-if (max < number3) max = number3;
+void FillArray(int[] arr, int len)
+{
+    for (int i = 0; i < len; i++)
+    {
+        arr[i] = new Random().Next(100, 1000);
+    }
+}
+FillArray(array, size);
+Console.WriteLine("[{0}]", string.Join(",", array));
 
-Console.WriteLine(max);
+int SumNotEvenNumbers(int[] collection, int length)
+{
+    int sum = collection[1];
+    for (int i = 3; i < length; i+=2)
+    {
+        sum += collection[i];
+    }
+    return sum;
+}
+int summa = SumNotEvenNumbers(array, size);
+Console.WriteLine($"Сумма элементов на нечетных позициях = {summa}");
