@@ -1,21 +1,21 @@
-﻿Console.WriteLine("Введите первое число ");
-int number1 = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите второе число ");
-int number2 = Convert.ToInt32(Console.ReadLine());
-int max = number1;
-if (number1 == number2) 
+﻿
+Console.Write("Сколько чисел вы хотите ввести? ");
+int numb = Convert.ToInt32(Console.ReadLine());
+int[] array = new int [numb];
+
+int PositiveCount(int count)
 {
-Console.WriteLine("Числа равны");
-}
-else
-{
-    if (number1 > number2)
+    int countOfPositive = 0;
+    for(int i = 0; i < count;i++)
     {
-        Console.WriteLine("max = " + max);
+        array[i] = Convert.ToInt32(Console.ReadLine());
+        if (array[i] > 0)
+        {
+            countOfPositive+=1;
+        }
+        Console.WriteLine("[{0}]",string.Join(",", array));
     }
-    else
-    {
-        max=number2;
-        Console.WriteLine("max = " + max);
-    }
+    return countOfPositive;
 }
+int posCount = PositiveCount(numb);
+Console.Write($"количество положительных чисел = {posCount}");
