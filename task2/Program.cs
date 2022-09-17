@@ -1,13 +1,14 @@
-﻿Console.WriteLine("Введите первое число ");
-int number1 = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите второе число ");
-int number2 = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите третье число ");
-int number3 = Convert.ToInt32(Console.ReadLine());
-
-int max = number1;
-
-if (max < number2) max = number2;
-if (max < number3) max = number3;
-
-Console.WriteLine(max);
+﻿int SumNumbersMN(int m, int n)
+{
+    if (m < n)
+    {
+        return  m + SumNumbersMN(m+1,n);
+    }
+    else if ( m > n)
+    {
+        return n + SumNumbersMN(m,n+1);
+    }
+    else return n;
+}
+Console.WriteLine(SumNumbersMN(1,10));
+Console.WriteLine(SumNumbersMN(10,1));

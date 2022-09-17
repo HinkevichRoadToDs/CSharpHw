@@ -1,21 +1,11 @@
-﻿Console.WriteLine("Введите первое число ");
-int number1 = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите второе число ");
-int number2 = Convert.ToInt32(Console.ReadLine());
-int max = number1;
-if (number1 == number2) 
+﻿string FromMtoN(int m, int n)
 {
-Console.WriteLine("Числа равны");
-}
-else
-{
-    if (number1 > number2)
+    if (m < n)
     {
-        Console.WriteLine("max = " + max);
+        return $"{m} {FromMtoN(m + 1, n)}";
     }
-    else
-    {
-        max=number2;
-        Console.WriteLine("max = " + max);
-    }
+    else if (m == n) return Convert.ToString(n);
+    else return $"{m} {FromMtoN(m - 1, n)}";
 }
+Console.WriteLine(FromMtoN(10, 20));
+Console.Write(FromMtoN(20, 10));
